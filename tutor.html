@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard - Tuition Tutors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tutor.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Tuition Tutors</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <header>
+            <h1 class="text-center">Welcome Bincy</h1>
+        </header>
+
+        <main>
+            <section id="profile" class="dashboard-section">
+                <h2>Edit Profile</h2>
+                <form action="/update-profile" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subjects">Subjects:</label>
+                        <input type="text" class="form-control" id="subjects" name="subjects" placeholder="e.g. Mathematics, Physics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio:</label>
+                        <textarea class="form-control" id="bio" name="bio" placeholder="Write a brief bio about yourself" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </form>
+            </section>
+
+            <section id="attendance" class="dashboard-section">
+                <h2>Update Student Attendance</h2>
+                <form action="/record-attendance" method="post">
+                    <div class="form-group">
+                        <label for="student">Student:</label>
+                        <select class="form-control" id="student" name="student" required>
+                            <option value="">Select a student</option>
+                            <option value="1">John Doe</option>
+                            <option value="2">Jane Smith</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select class="form-control" id="status" name="status" required>
+                            <option value="present">Present</option>
+                            <option value="absent">Absent</option>
+                            <option value="late">Late</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Record Attendance</button>
+                </form>
+            </section>
+
+            <section id="subjects" class="dashboard-section">
+                <h2>Subjects Taken</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Blockchain</li>
+                    <li class="list-group-item">Artificial Intelligence</li>
+                    <li class="list-group-item">Cybersecurity</li>
+                </ul>
+                <a href="/add-subject" class="btn btn-primary mt-2">Add New Subject</a>
+            </section>
+
+            <section id="sessions" class="dashboard-section">
+                <h2>Sessions Covered</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Student</th>
+                            <th>Course</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023-05-01</td>
+                            <td>John Doe</td>
+                            <td>Blockchain</td>
+                            <td>1 hour</td>
+                        </tr>
+                        <tr>
+                            <td>2023-05-03</td>
+                            <td>Jane Smith</td>
+                            <td>Artificial Intelligence</td>
+                            <td>1.5 hours</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>Quick Actions</h2>
+                <a href="/schedule-session" class="btn btn-primary">Schedule New Session</a>
+                <a href="/update-availability" class="btn btn-primary">Update Availability</a>
+                <a href="/messages" class="btn btn-primary">View Messages</a>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Bright Minds</h5>
+                    <p>
+                        Empowering learners through innovative technology and personalized learning experiences.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#profile" class="text-dark">Edit Profile</a></li>
+                        <li><a href="#attendance" class="text-dark">Add Attendance</a></li>
+                        <li><a href="#subjects" class="text-dark">My Courses</a></li>
+                        <li><a href="#sessions" class="text-dark">Sessions Covered</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Connect With Us</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="https://www.facebook.com" class="text-dark">Facebook</a></li>
+                        <li><a href="https://www.twitter.com" class="text-dark">Twitter</a></li>
+                        <li><a href="https://www.instagram.com" class="text-dark">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com" class="text-dark">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Bright Minds. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
